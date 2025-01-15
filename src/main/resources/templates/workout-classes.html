@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Classes</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script type="text/javascript" th:src="@{/js/validation.js}" defer></script>
+    <script th:src="@{/js/scripts.js}"></script>
+
+<body class="workout-classes"> <!-- Add page-specific class to apply custom background -->
+<div class="wrapper">
+    <h1>Workout Classes</h1>
+    <p id="error-message"></p>
+    <form id="form" th:action="@{/workout-classes/confirmation}" method="get">
+        <div>
+            <label for="equipment-name-input">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#5f6368">
+                    <path
+                            d="m400-80-20-360-127-73-14 52 81 141-69 40-99-170 48-172 230-132-110-110 56-56 184 183-144 83 48 42 328-268 48 56-340 344-20 400h-80ZM200-680q-33 0-56.5-23.5T120-760q0-33 23.5-56.5T200-840q33 0 56.5 23.5T280-760q0 33-23.5 56.5T200-680Z" />
+                </svg> </label>
+            <select required name="equipment-name" id="equipment-name-input">
+                <option>Class Name</option>
+                <option>Cardio Kickboxing</option>
+                <option>HIIT Training</option>
+                <option>Pilates</option>
+                <option>Spinning</option>
+                <option>Yoga Basics</option>
+                <option>Zumba</option>
+            </select>
+        </div>
+        <div>
+            <label for="fullname-input">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#5f6368">
+                    <path
+                            d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
+                </svg>
+            </label>
+            <input required type="text" name="fullname" id="fullname-input" placeholder="Full Name">
+        </div>
+        <div>
+            <label for="email-input">
+                <span>@</span>
+            </label>
+            <input required type="email" name="email" id="email-input" placeholder="Email">
+        </div>
+        <div>
+            <label for="class-date">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#5f6368">
+                    <path
+                            d="M480-400q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z" />
+                </svg>
+            </label>
+            <input type="date" id="class-date" name="class-date" required>
+        </div>
+
+        <button type="submit">Book a Class</button>
+    </form>
+
+    <p><a th:href="@{/}">Back to Home</a></p>
+
+    <section>
+        <h3>Available Workout Classes</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Class Name</th>
+                <th>Duration</th>
+                <th>Instructor</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Cardio Kickboxing</td>
+                <td>1 Hour</td>
+                <td>John Doe</td>
+                <td>9:00 AM</td>
+                <td><button
+                        onclick="document.getElementById('class-name').value = 'Cardio Kickboxing';">Book</button>
+                </td>
+            </tr>
+            <tr>
+                <td>CorePower Yoga</td>
+                <td>45 Minutes</td>
+                <td>Jane Smith</td>
+                <td>10:30 AM</td>
+                <td><button
+                        onclick="document.getElementById('class-name').value = 'CorePower Yoga';">Book</button>
+                </td>
+            </tr>
+            <tr>
+                <td>HIIT Training</td>
+                <td>45 Minutes</td>
+                <td>Mike Johnson</td>
+                <td>10:30 AM</td>
+                <td><button
+                        onclick="document.getElementById('class-name').value = 'HIIT Training';">Book</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Pilates</td>
+                <td>1 Hour</td>
+                <td>Jane Smith</td>
+                <td>12:00 PM</td>
+                <td><button onclick="document.getElementById('class-name').value = 'Pilates';">Book</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Spinning</td>
+                <td>1 Hour</td>
+                <td>Mary Doe</td>
+                <td>9:00 AM</td>
+                <td><button onclick="document.getElementById('class-name').value = 'Spinning';">Book</button>
+                </td>
+            </tr>
+
+            <!--
+            <tr>
+                <td>Zumba</td>
+                <td>1 Hour</td>
+                <td>Mary Doe</td>
+                <td>12:00 PM</td>
+                <td><button onclick="document.getElementById('class-name').value = 'Zumba';">Book</button>
+                </td>
+            </tr>
+            -->
+            </tbody>
+        </table>
+    </section>
+
+    <!--
+    <p><a th:href="@{/}">Back to Home</a></p>
+    -->
+</div>
+</body>
+</html>

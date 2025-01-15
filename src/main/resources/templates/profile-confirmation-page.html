@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <!-- Link to the CSS file inside static/css -->
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <!-- Link to validation.js file inside static/js -->
+  <script type="text/javascript" th:src="@{/js/validation.js}" defer></script>
+  <!-- Link to scripts.js file inside static/js -->
+  <script th:src="@{/js/scripts.js}"></script>
+</head>
+
+<body class="index">
+<header>
+  <h1>Gym Workout Companion</h1>
+  <nav>
+    <ul>
+      <li><a th:href="@{/}">Home</a></li>
+      <li><a th:href="@{/signup}">Sign Up</a></li>
+      <li><a th:href="@{/login}">Log In</a></li>
+      <li><a th:href="@{/workout-classes}">Workout Classes</a></li>
+      <li><a th:href="@{/equipment-log}">Equipment Log</a></li>
+      <li><a th:href="@{/profile}">Profile</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="wrapper">
+  <h1>You have successfully updated your profile!</h1>
+  <br>
+  <br>
+  <!--
+  <p>Join us now or log in to continue.</p>
+  <div class="buttons">
+    <a th:href="@{/signup}">
+      <button class="action-btn">Sign Up</button>
+    </a>
+    <a th:href="@{/login}">
+      <button class="action-btn">Login</button>
+    </a>
+
+    <br>
+    <br>
+
+    <p>Ready to Get Started? <a th:href="@{/signup}">Create an Account</a> </p>
+    <p>or <a th:href="@{/login}">Login</a></p>
+
+  </div>
+-->
+  <br>
+  <br>
+  <footer>
+    <p>&copy; 2024 Gym Workout Companion</p>
+  </footer>
+
+  <!-- Section for Upcoming Event -->
+  <div id="upcoming-event">
+    <h2>Upcoming Event</h2>
+    <p id="event-info">Event starts in:</p>
+    <div id="countdown"></div> <!-- Countdown timer will be displayed here -->
+  </div>
+  <script th:src="@{js/scripts.js}"></script>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Log</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script type="text/javascript" th:src="@{/js/validation.js}" defer></script>
+    <script th:src="@{/js/scripts.js}"></script>
+</head>
+
+<body class="equipment-log">
+<div class="wrapper">
+    <h1>Equipment Log</h1>
+    <p id="error-message"></p>
+    <form id="form" th:action="@{/equipment-log/confirmation}" method="get">
+        <div>
+            <label for="equipment-name-input">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#5f6368">
+                    <path
+                            d="M839-599 597-841l17-17q23-23 57-22.5t57 23.5l129 129q23 23 23 56.5T857-615l-18 16ZM346-104q-23 23-56.5 23T233-104L104-233q-23-23-23-56.5t23-56.5l16-16 242 242-16 16Zm145-28q-12 12-28 12t-28-12L132-435q-12-12-12-28t12-28l57-58q12-12 28.5-12t28.5 12l63 63 166-166-63-63q-12-12-12-28t12-28l57-58q12-12 28.5-12t28.5 12l303 303q12 12 12 28.5T829-469l-58 57q-12 12-28 12t-28-12l-63-63-166 166 63 63q12 12 12 28.5T549-189l-58 57Z" />
+                </svg>
+            </label>
+            <select required name="equipment-name" id="equipment-name-input">
+                <option>Equipment Name</option>
+                <option>Elliptical</option>
+                <option>Free Weights</option>
+                <option>Rowing Machine</option>
+                <option>Stair Climber</option>
+                <option>Treadmill</option>
+            </select>
+        </div>
+        <div>
+            <label for="equipment-type">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#5f6368">
+                    <path
+                            d="M839-599 597-841l17-17q23-23 57-22.5t57 23.5l129 129q23 23 23 56.5T857-615l-18 16ZM346-104q-23 23-56.5 23T233-104L104-233q-23-23-23-56.5t23-56.5l16-16 242 242-16 16Zm145-28q-12 12-28 12t-28-12L132-435q-12-12-12-28t12-28l57-58q12-12 28.5-12t28.5 12l63 63 166-166-63-63q-12-12-12-28t12-28l57-58q12-12 28.5-12t28.5 12l303 303q12 12 12 28.5T829-469l-58 57q-12 12-28 12t-28-12l-63-63-166 166 63 63q12 12 12 28.5T549-189l-58 57Z" />
+                </svg>
+            </label>
+            <select id="equipment-type" name="equipment-type" required>
+                <option value="Equipment Type">Equipment Type</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Strength">Strength</option>
+                <option value="Flexibility">Flexibility</option>
+            </select>
+        </div>
+        <div>
+            <label for="equipment-date">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#5f6368">
+                    <path
+                            d="M480-400q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z" />
+                </svg></label>
+            <input type="date" id="equipment-date" name="equipment-date" required>
+        </div>
+        <div>
+            <label for="notes">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                     fill="#5f6368">
+                    <path
+                            d="M700-120h40v-100h100v-40H740v-100h-40v100H600v40h100v100Zm20 80q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40ZM280-600h400v-80H280v80Zm187 480H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v268q-29-14-58.5-21t-61.5-7q-11 0-20.5.5T680-517v-3H280v80h245q-18 17-32.5 37T467-360H280v80h163q-2 10-2.5 19.5T440-240q0 33 6 61.5t21 58.5Z" />
+                </svg>
+            </label>
+            <input id="notes" name="notes" placeholder="Any additional notes about the equipment"></input>
+
+        </div>
+
+
+        <button type="submit">Add Equipment</button>
+        <p><a th:href="@{/}">Back to Home</a></p>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2024 Gym Workout Companion</p>
+        </footer>
+        <script th:src="@{/js/scripts.js}"></script>
+    </form>
+
+</div>
+</body>
+
+</html>

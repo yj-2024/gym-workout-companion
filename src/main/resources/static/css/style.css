@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --accent-color: #8672FF;
+    --base-color: white;
+    --text-color: #2E2B41;
+    --input-color: #F3F0FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Poppins, Segoe UI, sans-serif;
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    background-color: var(--base-color);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(84, 84, 134);
+}
+
+/* Specific Page Backgrounds */
+body.index {
+    background-image: url('../images/workout-classes.jpg');
+    /* Custom background for workout-classes */
+    background-position: right center;
+    /* Keep image aligned to the right */
+    background-size: cover;
+}
+
+body.signup {
+    background-image: url('../images/signup.jpg');
+    /* Custom background for workout-classes */
+    background-position: right center;
+    /* Keep image aligned to the right */
+    background-size: cover;
+}
+
+body.login {
+    background-image: url('../images/login2.jpg');
+    /* Custom background for workout-classes */
+    background-position: right center;
+    /* Keep image aligned to the right */
+    background-size: cover;
+}
+
+body.workout-classes {
+    background-image: url('../images/workout-classes2.jpg');
+    /* Custom background for workout-classes */
+    background-position: right center;
+    /* Keep image aligned to the right */
+    background-size: cover;
+}
+
+body.equipment-log {
+    background-image: url('../images/equipment-log2.jpg');
+    /* Custom background for equipment log */
+    background-position: right center;
+    background-size: cover;
+}
+
+body.profile {
+    background-image: url('../images/profile.jpg');
+    /* Custom background for equipment log */
+    background-position: right center;
+    background-size: cover;
+}
+
+form {
+    width: min(400px, 100%);
+    margin-top: 15px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form>div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form label {
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+
+form select {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    font-size: 12px;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+
+form input:hover {
+    border-color: var(--accent-color);
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+div:has(input:focus)>label {
+    background-color: var(--text-color);
+}
+
+form input::placeholder {
+    color: var(--text-color);
+}
+
+form select:hover {
+    border-color: var(--accent-color);
+}
+
+form select:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+div:has(select:focus)>label {
+    background-color: var(--text-color);
+}
+
+form select::placeholder {
+    color: var(--text-color);
+}
+
+form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+form button:hover {
+    background-color: var(--text-color);
+}
+
+form button:focus {
+    outline: none;
+    background-color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 1100px) {
+    .wrapper {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+
+form div.incorrect label {
+    background-color: #f06272;
+}
+
+form div.incorrect input {
+    border-color: #f06272;
+}
+
+#error-message {
+    color: #f06272;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+footer {
+    color: rgb(84, 84, 134);
+}
+
+.incorrect {
+    border: 2px solid red;
+}
+
+#error-message {
+    color: red;
+    font-size: 14px;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+#upcoming-event {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Countdown timer - alternate color: #FF5733; */
+#countdown {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 20px;
+}
+
+/* Initially hide the section */
+.hidden {
+    display: none;
+}
+
+/* Optional: Style for the button and the content and hidden section */
+#showButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#showButton:hover {
+    background-color: #45a049;
+}
+
+#hiddenSection {
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+
