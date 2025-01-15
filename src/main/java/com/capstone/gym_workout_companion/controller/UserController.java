@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,18 +19,6 @@ public class UserController {
     // to handle HTTP requests and provide appropriate responses.
     @Autowired
     private UserService userService;
-
-   /* @GetMapping("/signup")
-    public String registerUser(Model model){
-        model.addAttribute("user", new UserDTO());
-        return "register-user";
-    }
-
-    @PostMapping("/signup")
-    public String signup(User user) {
-        userService.createUser(user);
-        return "redirect:/login";
-    }*/
 
     // Create a new user
     @PostMapping("/create-user")

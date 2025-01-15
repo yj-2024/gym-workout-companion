@@ -1,6 +1,5 @@
 package com.capstone.gym_workout_companion.controller;
 
-import com.capstone.gym_workout_companion.dto.UserDTO;
 import com.capstone.gym_workout_companion.model.WorkoutClass;
 import com.capstone.gym_workout_companion.service.WorkoutClassService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,15 +81,4 @@ public class WorkoutClassController {
     public List<WorkoutClass> getClassesByDate(@PathVariable String date) {
         return workoutClassService.getClassesByDate(date);
     }
-
-    /*
-     @GetMapping("/classes-by-date/{date}")
-    public ResponseEntity<List<WorkoutClass>> getClassesByDate(@PathVariable String date) {
-        List<WorkoutClass> workoutClasses = workoutClassService.getClassesByDate(date);
-        if (workoutClasses.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(workoutClasses);
-    }
-     */
 }

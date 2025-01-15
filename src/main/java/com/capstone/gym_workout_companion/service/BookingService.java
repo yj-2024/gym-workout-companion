@@ -96,9 +96,6 @@ public class BookingService {
         if (existingBooking.isPresent()) {
             Booking booking = existingBooking.get();
             Optional<WorkoutClass> workoutClassOpt = workoutClassRepository.findById(workoutClassId);
-            //booking.setUserId(updatedBooking.getUserId());
-            //booking.setClassId(updatedBooking.getClassId());
-            //booking.setBookingDate(updatedBooking.getBookingDate());
 
             // Set the customer name
             booking.setCustomerName(customerName);
@@ -188,47 +185,3 @@ public class BookingService {
         });
     }
 }
-
-
-
-/*
-import com.capstone.gym_workout_companion.model.Booking;
-import com.capstone.gym_workout_companion.repository.BookingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-
-@Service
-public class BookingService {
-
-    @Autowired
-    private BookingRepository bookingRepository;
-
-    public Booking createBooking(Booking booking) {
-        return bookingRepository.save(booking);
-    }
-
-    public Booking getBookingById(Long id) {
-        return bookingRepository.findById(id).orElse(null);
-    }
-
-    // Get all bookings
-    public List<Booking> getAllBookings() {
-        return bookingRepository.findAll();  // Assumes BookingRepository extends JpaRepository
-    }
-
-    // Cancel booking by ID
-    public boolean cancelBooking(Long id) {
-        Optional<Booking> booking = bookingRepository.findById(id);
-        if (booking.isPresent()) {
-            bookingRepository.delete(booking.get());
-            return true;  // Successfully canceled
-        }
-        return false;  // Booking not found
-    }
-
-}
-
- */

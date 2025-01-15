@@ -25,16 +25,4 @@ public class LoginDTO {
     @NotBlank
     private String password;
 
-    /*
-    The Remember Me checkbox field is a boolean that represents whether the user has selected
-    the "Remember Me" option on the login form.
-    If true, the system can issue a persistent cookie to keep the user logged in.
-    */
-    //private boolean rememberMe;
-
-    /*
-    The captchaResponse field would store the CAPTCHA response entered by the user.
-    On the backend, we need to validate this response with the CAPTCHA service we're using (e.g., Google reCAPTCHA).
-    */
-    //private String captchaResponse;
 }

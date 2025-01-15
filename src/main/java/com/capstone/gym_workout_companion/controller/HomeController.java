@@ -17,14 +17,4 @@ public class HomeController {
         return "index";
     }
 
-    // Users who are already logged in are redirected to the home page
-    // (or profile page) if they try to access the login page.
-    /*@GetMapping("/login")
-    public String login(HttpSession session) {
-        if (session.getAttribute("user") != null) {  // Assuming 'user' is stored in the session
-            return "redirect:/home"; // Redirect authenticated users to home page
-        }
-        return "login"; // Otherwise, show login page
-    }*/
-
 }
