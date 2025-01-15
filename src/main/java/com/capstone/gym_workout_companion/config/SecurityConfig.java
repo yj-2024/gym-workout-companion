@@ -25,16 +25,6 @@ public class SecurityConfig {
     @Autowired
     private UserService userService;
 
-    /*
-    @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setUserDetailsService(userService);
-        daoAuthenticationProvider.setPasswordEncoder(bCryptPasswordEncoder());
-        return daoAuthenticationProvider;
-    }
-    */
-
     @Bean
     public AuthenticationManager authenticationManager(BCryptPasswordEncoder bCryptPasswordEncoder, UserService userService) {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
